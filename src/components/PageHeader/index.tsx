@@ -8,6 +8,7 @@ import './styles.css';
 
 interface PageHeaderProps {
     title: string; //obrigatorio...para não obrigatorio seria title?: string
+    description?: string;
 }
 
 const PageHeader: React.FC <PageHeaderProps> = (props) => { //componente em formato de função
@@ -22,6 +23,7 @@ const PageHeader: React.FC <PageHeaderProps> = (props) => { //componente em form
 
             <div className="header-content">
                 <strong>{props.title}</strong>
+                { props.description && <p>{props.description}</p> } {/*basicamente um IF*/}                
 
                 {props.children}    
             </div>
